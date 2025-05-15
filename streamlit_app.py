@@ -27,7 +27,7 @@ credentials = Credentials.from_service_account_info(
     st.secrets["gcp_service_account"], scopes=SCOPE
 )
 gc = gspread.authorize(credentials)
-SPREADSHEET_URL = st.secrets["spreadsheet_url"]
+SPREADSHEET_URL = st.secrets["other"]["spreadsheet_url"]
 sh = gc.open_by_url(SPREADSHEET_URL)
 ws = sh.sheet1
 
